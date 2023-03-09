@@ -362,6 +362,7 @@ int PoseGraph::detectLoop(KeyFrame *keyframe, int frame_index) {
         find_loop = true;
         int tmp_index = ret[i].Id;
         if (DEBUG_IMAGE && 0) {
+          cout<<"find loop closure!"<<endl;
           auto it = image_pool.find(tmp_index);
           cv::Mat tmp_image = (it->second).clone();
           putText(tmp_image, "loop score:" + to_string(ret[i].Score),
